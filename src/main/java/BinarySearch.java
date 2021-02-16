@@ -12,10 +12,10 @@ public class BinarySearch {
 		QuickSort quickSort = new QuickSort(al);
 		
 		//sorting the arrayList before start searching
-    	quickSort.startQuickSort(0, al.size() - 1); 
+    	        quickSort.startQuickSort(0, al.size() - 1); 
 		
     	
-    	int low = 0;
+    	        int low = 0;
 		int high = al.size() - 1;
 		while(low <= high) {
 			int mid = low + (high - low) / 2;
