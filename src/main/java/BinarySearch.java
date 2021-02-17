@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 
+
 public class BinarySearch {
+	
 	private ArrayList<Integer> al = new ArrayList<Integer>();
 	
 	public BinarySearch(ArrayList<Integer> al) {
@@ -8,21 +10,20 @@ public class BinarySearch {
 	}
 	
 	public boolean startSearching(int value) {
-		
-		QuickSort quickSort = new QuickSort(al);
-		
-		//sorting the arrayList before start searching
-    	        quickSort.startQuickSort(0, al.size() - 1); 
+		//create a copy of the original array, so the original wont be sorted 
+		ArrayList<Integer> copyAl = new ArrayList<Integer>(al);
+		QuickSort quickSort = new QuickSort(copyAl);
+    	quickSort.startQuickSort(0, copyAl.size() - 1); 
 		
     	
-    	        int low = 0;
-		int high = al.size() - 1;
+    	int low = 0;
+		int high = copyAl.size() - 1;
 		while(low <= high) {
 			int mid = low + (high - low) / 2;
-			if(al.get(mid) == value) {
+			if(copyAl.get(mid) == value) {
 				return true;
 			}
-			else if(al.get(mid) < value) {
+			else if(copyAl.get(mid) < value) {
 				low = mid +1;
 			}
 			else {
@@ -31,5 +32,8 @@ public class BinarySearch {
 		}
 		return false;
 	}
+
+	
+	
 }
 

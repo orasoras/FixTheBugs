@@ -85,9 +85,9 @@ public class MyMain {
                         break;
                 }
             }
-            sc.close();
+            
         }
-
+        sc.close();
     }
     private static void closeApp() {
         System.out.println("Closing your application... \nThank you!");
@@ -108,17 +108,14 @@ public class MyMain {
         else {
         	System.out.println("The expense not found");
         }
-        sc.close();
+        
     }
     private static void sortExpenses(ArrayList<Integer> arrayList) {
     	QuickSort quickSort = new QuickSort(arrayList);
     	quickSort.startQuickSort(0, arrayList.size() - 1);
-    	System.out.println("---- Sorted Expences ----");
+    	System.out.println("---- Sorted Expences ----\n");
+    	System.out.println(expenses+"\n");
     	
-    	for(int i : quickSort.getSortedArray()) {
-    		System.out.print(i +" ");
-    	}
-    	System.out.println("\n\n");
     	
     }
 }
